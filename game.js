@@ -1,22 +1,27 @@
-let gridSquareX = 0;
-let gridSquareY = 0;
-let gameCanvasSize = 600;
-let shapeSize = 20;
+var gridTileX = 0;
+var gridTileY = 0;
+var gameCanvasSize = 400;
+var tileSize = 20;
+
+var gameTiles = [];
 
 function setup() {
     let myCanvas = createCanvas(gameCanvasSize, gameCanvasSize);
     myCanvas.parent("canvas");
-    background(230);  
+    background(230);
+    for (let i = 0; i < (gameCanvasSize / tileSize); i++) {
+        var tempTiles = [];
+        for (let j = 0; j < (gameCanvasSize / tileSize); j++) {
+            tempTiles.push(new Tile(gridTileX, gridTileY, tileSize));
+            tempTiles[j].display();
+            gridTileX = gridTileX + tileSize;
+        }
+        gameTiles.push(tempTiles);
+        gridTileY = gridTileY + tileSize;
+        gridTileX = gridTileX - gameCanvasSize;
+    }
 }
 
 function draw() {
-    fill(255, 0, 0);
-    if (gridSquareX != gameCanvasSize) {
-        rect(gridSquareX, gridSquareY, shapeSize, shapeSize);
-        gridSquareX = gridSquareX + shapeSize;
-    } else if (gridSquareY != gameCanvasSize) {
-        gridSquareX = gridSquareX - gameCanvasSize;
-        rect(gridSquareX, gridSquareY, shapeSize, shapeSize);
-        gridSquareY = gridSquareY + shapeSize;
-    }
+
 }
