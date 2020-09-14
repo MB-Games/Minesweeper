@@ -23,5 +23,18 @@ function setup() {
 }
 
 function draw() {
+    
+}
 
+function checkForClicks() {
+    for (let i = 0; i < (gameCanvasSize / tileSize); i++) {
+        for (let j = 0; j < (gameCanvasSize / tileSize); j++) {
+
+        }
+    }
+}
+
+function mousePressed() {
+    console.log("Pressed");
+    console.log(mouseX);
 }
