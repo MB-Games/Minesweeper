@@ -26,15 +26,12 @@ function draw() {
     
 }
 
-function checkForClicks() {
+function mousePressed() {
     for (let i = 0; i < (gameCanvasSize / tileSize); i++) {
         for (let j = 0; j < (gameCanvasSize / tileSize); j++) {
-
+            if((mouseX - gameTiles[i][j].getX() < 20 && mouseX - gameTiles[i][j].getX() > 0) && (mouseY - gameTiles[i][j].getY() < 20 && mouseY - gameTiles[i][j].getY() > 0)) {
+                gameTiles[i][j].clicked();
+            }
         }
     }
-}
-
-function mousePressed() {
-    console.log("Pressed");
-    console.log(mouseX);
 }

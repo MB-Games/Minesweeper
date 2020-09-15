@@ -10,4 +10,21 @@ class Tile {
         fill(this.colour);
         rect(this.x, this.y, this.size, this.size);
     }
+
+    getX() {
+        return this.x;
+    }
+
+    getY() {
+        return this.y;
+    }
+
+    clicked() {
+        fill(255, 0, 0);
+        rect(this.x, this.y, this.size, this.size);
+    }
+}
+
+Tile.prototype.toString = function() {
+    return "y: " + this.x + " x: " + this.y;
 }
