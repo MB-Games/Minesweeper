@@ -1,6 +1,6 @@
 var gridTileX = 0;
 var gridTileY = 0;
-var gameCanvasSize = 400;
+var gameCanvasSize = 200;
 var tileSize = 20;
 
 var gameTiles = [];
